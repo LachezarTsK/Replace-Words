@@ -5,11 +5,11 @@ public class Solution {
 
     public String replaceWords(List<String> dictionary, String sentence) {
         Trie trie = new Trie();
-        addWordsInDictionaryToTrie(dictionary, trie);
+        addAllWordsInDictionaryToTrie(dictionary, trie);
         return replaceAllWordsWithTheirShortestRoot(sentence, trie);
     }
 
-    private void addWordsInDictionaryToTrie(List<String> dictionary, Trie trie) {
+    private void addAllWordsInDictionaryToTrie(List<String> dictionary, Trie trie) {
         for (String word : dictionary) {
             trie.addWord(word);
         }
@@ -34,6 +34,7 @@ class Trie {
     private final TrieNode rootTrieNode = new TrieNode();
 
     private final class TrieNode {
+
         TrieNode[] branches = new TrieNode[ALPHABET_SIZE];
         boolean isEndOfWordRoot;
     }
