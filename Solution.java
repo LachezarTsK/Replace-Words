@@ -34,7 +34,6 @@ class Trie {
     private final TrieNode rootTrieNode = new TrieNode();
 
     private final class TrieNode {
-
         TrieNode[] branches = new TrieNode[ALPHABET_SIZE];
         boolean isEndOfWordRoot;
     }
